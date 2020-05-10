@@ -1,0 +1,15 @@
+CREATE TABLE `u_user` (
+	`user_id` INT (11) NOT NULL AUTO_INCREMENT COMMENT '用户id',
+	`user_name` VARCHAR (50) DEFAULT NULL COMMENT '用户名',
+	`phone` VARCHAR (11) NOT NULL COMMENT '手机号',
+	`email` VARCHAR (50) NOT NULL COMMENT '邮箱号',
+	`password` VARCHAR (64) NOT NULL COMMENT '密码',
+	`sex` TINYINT (1) DEFAULT '0' COMMENT '性别  0=女,1=男',
+	`age` TINYINT (3) DEFAULT '0' COMMENT '年龄',
+	`pic_url` VARCHAR (255) DEFAULT NULL COMMENT '用户头像',
+	`status` TINYINT (1) DEFAULT '1' COMMENT '是否可用 1=正常,2=冻结',
+	`create_time` TIMESTAMP NULL DEFAULT NULL COMMENT '创建时间',
+	`update_time` TIMESTAMP NULL DEFAULT NULL COMMENT '修改时间',
+	PRIMARY KEY (`user_id`),
+	UNIQUE KEY `phone_unique` (`phone`)
+) ENGINE = INNODB AUTO_INCREMENT = 25 DEFAULT CHARSET = utf8 COMMENT = '用户表';
