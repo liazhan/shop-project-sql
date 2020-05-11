@@ -1,5 +1,5 @@
 CREATE TABLE `u_user_token` (
-  `user_token_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `user_token_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键',
   `token` varchar(255) DEFAULT NULL COMMENT 'token',
   `login_type` TINYINT (1) DEFAULT NULL COMMENT '登陆方式 1=pc,2=android,3=ios',
   `device_infor` varchar(255) DEFAULT NULL COMMENT '设备信息',

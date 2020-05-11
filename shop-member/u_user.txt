@@ -1,5 +1,5 @@
 CREATE TABLE `u_user` (
-	`user_id` INT (11) NOT NULL AUTO_INCREMENT COMMENT '用户id',
+	`user_id` INT (11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '用户id',
 	`user_name` VARCHAR (50) DEFAULT NULL COMMENT '用户名',
 	`phone` VARCHAR (11) NOT NULL COMMENT '手机号',
 	`email` VARCHAR (50) NOT NULL COMMENT '邮箱号',
