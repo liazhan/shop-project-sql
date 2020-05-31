@@ -1,0 +1,17 @@
+CREATE TABLE `p_brand` (
+	`brand_id` MEDIUMINT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '品牌ID',
+	`brand_name` VARCHAR (50) NOT NULL COMMENT '品牌名称',
+	`telephone` VARCHAR (50) NOT NULL COMMENT '联系电话',
+	`brand_web` VARCHAR (100) COMMENT '品牌网络',
+	`brand_logo` VARCHAR (255) COMMENT '品牌logo URL',
+	`brand_desc` text COMMENT '品牌描述',
+	`brand_status` TINYINT NOT NULL DEFAULT 0 COMMENT '品牌状态,0禁用,1启用',
+	`brand_order` MEDIUMINT NOT NULL DEFAULT 1 COMMENT '排序 值越小排序越前',
+	`revision` INT (11) UNSIGNED DEFAULT 1 COMMENT '乐观锁',
+	`created_by` INT (11) UNSIGNED DEFAULT NULL COMMENT '创建人',
+	`created_time` TIMESTAMP DEFAULT NULL COMMENT '创建时间',
+	`updated_by` INT (11) UNSIGNED DEFAULT NULL COMMENT '更新人',
+	`updated_time` TIMESTAMP DEFAULT NULL COMMENT '更新时间',
+	PRIMARY KEY (`brand_id`)
+) ENGINE = INNODB AUTO_INCREMENT = 13 DEFAULT CHARSET = utf8 COMMENT = '品牌信息表';
+ 

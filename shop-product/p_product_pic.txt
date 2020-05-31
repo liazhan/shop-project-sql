@@ -1,0 +1,16 @@
+CREATE TABLE `p_product_pic` (
+	`product_pic_id` INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '商品图片ID',
+	`product_id` INT UNSIGNED NOT NULL COMMENT '商品ID',
+	`pic_desc` VARCHAR (50) COMMENT '图片描述',
+	`pic_url` VARCHAR (200) NOT NULL COMMENT '图片URL',
+	`is_master` TINYINT NOT NULL DEFAULT 0 COMMENT '是否主图：0.非主图1.主图',
+	`pic_order` TINYINT NOT NULL DEFAULT 1 COMMENT '图片排序',
+	`pic_status` TINYINT NOT NULL DEFAULT 0 COMMENT '图片是否有效：0无效 1有效',
+	`revision` INT (11) UNSIGNED DEFAULT 1 COMMENT '乐观锁',
+	`created_by` INT (11) UNSIGNED DEFAULT NULL COMMENT '创建人',
+	`created_time` TIMESTAMP DEFAULT NULL COMMENT '创建时间',
+	`updated_by` INT (11) UNSIGNED DEFAULT NULL COMMENT '更新人',
+	`updated_time` TIMESTAMP DEFAULT NULL COMMENT '更新时间',
+	PRIMARY KEY (product_pic_id)
+) ENGINE = INNODB AUTO_INCREMENT = 4 DEFAULT CHARSET = utf8 COMMENT = '商品图片信息表';
+ 

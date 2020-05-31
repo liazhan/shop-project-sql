@@ -1,0 +1,13 @@
+CREATE TABLE `p_attribute_value` (
+	`attribute_value_id` INT (11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+	`attribute_key_id` INT (11) UNSIGNED DEFAULT NULL COMMENT '属性ID',
+	`attribute_value` VARCHAR (32) DEFAULT NULL COMMENT '属性值',
+	`value_status` TINYINT DEFAULT 0 COMMENT '状态 0=禁用,1=启用',
+	`value_order` INT (11) DEFAULT 1 COMMENT '值排序 值越小排序越前',
+	`revision` INT (11) UNSIGNED DEFAULT 1 COMMENT '乐观锁',
+	`created_by` INT (11) UNSIGNED DEFAULT NULL COMMENT '创建人',
+	`created_time` TIMESTAMP DEFAULT NULL COMMENT '创建时间',
+	`updated_by` INT (11) UNSIGNED DEFAULT NULL COMMENT '更新人',
+	`updated_time` TIMESTAMP DEFAULT NULL COMMENT '更新时间',
+	PRIMARY KEY (`attribute_value_id`)
+) ENGINE = INNODB AUTO_INCREMENT = 15 DEFAULT CHARSET = utf8 COMMENT = '商品规格值表 ';

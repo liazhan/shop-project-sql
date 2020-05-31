@@ -1,0 +1,20 @@
+CREATE TABLE `p_supplier` (
+	`supplier_id` MEDIUMINT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '供应商ID',
+	`supplier_code` VARCHAR (50) NOT NULL COMMENT '供应商编码',
+	`supplier_name` VARCHAR (50) NOT NULL COMMENT '供应商名称',
+	`supplier_type` TINYINT NOT NULL COMMENT '供应商类型：1.自营，2.平台',
+	`link_man` VARCHAR (10) NOT NULL COMMENT '供应商联系人',
+	`phone_number` VARCHAR (50) NOT NULL COMMENT '联系电话',
+	`bank_name` VARCHAR (50) NOT NULL COMMENT '供应商开户银行名称',
+	`bank_account` VARCHAR (50) NOT NULL COMMENT '银行账号',
+	`address` VARCHAR (255) NOT NULL COMMENT '供应商地址',
+	`supplier_status` TINYINT NOT NULL DEFAULT 0 COMMENT '状态：0禁止，1启用',
+	`supplier_order` MEDIUMINT NOT NULL DEFAULT 1 COMMENT '排序 值越小排序越前',
+	`revision` INT (11) UNSIGNED DEFAULT 1 COMMENT '乐观锁',
+	`created_by` INT (11) UNSIGNED DEFAULT NULL COMMENT '创建人',
+	`created_time` TIMESTAMP DEFAULT NULL COMMENT '创建时间',
+	`updated_by` INT (11) UNSIGNED DEFAULT NULL COMMENT '更新人',
+	`updated_time` TIMESTAMP DEFAULT NULL COMMENT '更新时间',
+	PRIMARY KEY (supplier_id)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COMMENT='供应商信息表';
+ 

@@ -1,0 +1,15 @@
+CREATE TABLE `p_product_specs` (
+	`product_specs_id` INT (11) UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '主键ID',
+	`product_id` INT (11) UNSIGNED DEFAULT NULL COMMENT '商品ID',
+	`product_specs` text COMMENT '商品规格',
+	`specs_order` INT (11) DEFAULT 1 COMMENT '规格顺序 值越小排序越前',
+	`product_stock` INT (11) DEFAULT NULL COMMENT '商品库存',
+	`product_price` DECIMAL (32, 2) DEFAULT NULL COMMENT '商品价格',
+	`average_cost` DECIMAL (18, 2) NOT NULL COMMENT '商品平均成本',
+	`revision` INT (11) UNSIGNED DEFAULT 1 COMMENT '乐观锁',
+	`created_by` INT (11) UNSIGNED DEFAULT NULL COMMENT '创建人',
+	`created_time` TIMESTAMP DEFAULT NULL COMMENT '创建时间',
+	`updated_by` INT (11) UNSIGNED DEFAULT NULL COMMENT '更新人',
+	`updated_time` TIMESTAMP DEFAULT NULL COMMENT '更新时间',
+	PRIMARY KEY (`product_specs_id`)
+) ENGINE = INNODB AUTO_INCREMENT = 4 DEFAULT CHARSET = utf8 COMMENT = '商品规格表 ';

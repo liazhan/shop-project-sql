@@ -1,0 +1,15 @@
+CREATE TABLE p_product_comment (
+	`comment_id` INT UNSIGNED AUTO_INCREMENT NOT NULL COMMENT '评论ID',
+	`product_id` INT UNSIGNED NOT NULL COMMENT '商品ID',
+	`order_id` BIGINT UNSIGNED NOT NULL COMMENT '订单ID',
+	`title` VARCHAR (255) NOT NULL COMMENT '评论标题',
+	`content` text NOT NULL COMMENT '评论内容',
+	`audit_status` TINYINT NOT NULL DEFAULT 0 COMMENT '审核状态：0未审核，1已审核',
+	`revision` INT (11) UNSIGNED DEFAULT 1 COMMENT '乐观锁',
+	`created_by` INT (11) UNSIGNED DEFAULT NULL COMMENT '创建人',
+	`created_time` TIMESTAMP DEFAULT NULL COMMENT '创建时间',
+	`updated_by` INT (11) UNSIGNED DEFAULT NULL COMMENT '更新人',
+	`updated_time` TIMESTAMP DEFAULT NULL COMMENT '更新时间',
+	PRIMARY KEY (comment_id)
+) ENGINE = INNODB AUTO_INCREMENT = 4 DEFAULT CHARSET = utf8 COMMENT = '商品评论表 ';
+ 
